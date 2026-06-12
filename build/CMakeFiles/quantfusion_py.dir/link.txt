@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -flto=auto -Wl,--dependency-file=CMakeFiles/quantfusion_py.dir/link.d  -o quantfusion_py.cpython-314-x86_64-linux-gnu.so CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o  /usr/lib/x86_64-linux-gnu/libsqlite3.so

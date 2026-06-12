@@ -48,6 +48,9 @@ struct ParamDef {
 using ParamSet    = std::unordered_map<std::string, double>;
 using ObjectiveFn = std::function<double(const ParamSet&)>;
 
+// ── Objective metric used by walk-forward / ranking integrations ──────────
+enum class Objective { Sharpe, Sortino, CAGR, ProfitFactor, Calmar };
+
 struct Trial {
     ParamSet params;
     double   score = std::numeric_limits<double>::lowest();
