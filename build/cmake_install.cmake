@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion
+# Install script for directory: /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,7 +45,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/install_local_manifest.txt"
+  file(WRITE "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -61,6 +61,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -1,4 +1,4 @@
-/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles/quantfusion.dir
-/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles/quantfusion_py.dir
-/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles/quantfusion.dir
+/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles/quantfusion_py.dir
+/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles/rebuild_cache.dir

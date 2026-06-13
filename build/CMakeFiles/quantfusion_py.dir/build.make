@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion
+CMAKE_SOURCE_DIR = /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build
+CMAKE_BINARY_DIR = /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/quantfusion_py.dir/depend.make
@@ -73,18 +73,18 @@ CMakeFiles/quantfusion_py.dir/codegen:
 .PHONY : CMakeFiles/quantfusion_py.dir/codegen
 
 CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: CMakeFiles/quantfusion_py.dir/flags.make
-CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/PyBridge.cpp
+CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/PyBridge.cpp
 CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: CMakeFiles/quantfusion_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o -MF CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o.d -o CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o -c /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/PyBridge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o -MF CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o.d -o CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o -c /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/PyBridge.cpp
 
 CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/PyBridge.cpp > CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/PyBridge.cpp > CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.i
 
 CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/PyBridge.cpp -o CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/PyBridge.cpp -o CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.s
 
 # Object files for target quantfusion_py
 quantfusion_py_OBJECTS = \
@@ -98,9 +98,9 @@ quantfusion_py.cpython-314-x86_64-linux-gnu.so: CMakeFiles/quantfusion_py.dir/bu
 quantfusion_py.cpython-314-x86_64-linux-gnu.so: CMakeFiles/quantfusion_py.dir/compiler_depend.ts
 quantfusion_py.cpython-314-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 quantfusion_py.cpython-314-x86_64-linux-gnu.so: CMakeFiles/quantfusion_py.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module quantfusion_py.cpython-314-x86_64-linux-gnu.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module quantfusion_py.cpython-314-x86_64-linux-gnu.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/quantfusion_py.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/strip /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/quantfusion_py.cpython-314-x86_64-linux-gnu.so
+	/usr/bin/strip /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/quantfusion_py.cpython-314-x86_64-linux-gnu.so
 
 # Rule to build all files generated by this target.
 CMakeFiles/quantfusion_py.dir/build: quantfusion_py.cpython-314-x86_64-linux-gnu.so
@@ -111,6 +111,6 @@ CMakeFiles/quantfusion_py.dir/clean:
 .PHONY : CMakeFiles/quantfusion_py.dir/clean
 
 CMakeFiles/quantfusion_py.dir/depend:
-	cd /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/build/CMakeFiles/quantfusion_py.dir/DependInfo.cmake "--color=$(COLOR)" quantfusion_py
+	cd /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/build/CMakeFiles/quantfusion_py.dir/DependInfo.cmake "--color=$(COLOR)" quantfusion_py
 .PHONY : CMakeFiles/quantfusion_py.dir/depend
 

@@ -1,7 +1,7 @@
 CMakeFiles/quantfusion.dir/main.cpp.o: \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/main.cpp \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/main.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/core/Types.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/core/Types.h \
  /usr/include/c++/15/cstdint \
  /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h \
@@ -213,7 +213,7 @@ CMakeFiles/quantfusion.dir/main.cpp.o: \
  /usr/include/c++/15/bits/ranges_algobase.h \
  /usr/include/c++/15/bits/unicode.h \
  /usr/include/c++/15/bits/unicode-data.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/core/SymbolRegistry.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/core/SymbolRegistry.h \
  /usr/include/c++/15/unordered_map \
  /usr/include/c++/15/bits/unordered_map.h \
  /usr/include/c++/15/bits/hashtable.h \
@@ -223,7 +223,7 @@ CMakeFiles/quantfusion.dir/main.cpp.o: \
  /usr/include/c++/15/bits/std_mutex.h \
  /usr/include/c++/15/bits/unique_lock.h /usr/include/c++/15/functional \
  /usr/include/c++/15/bits/std_function.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/core/Clock.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/core/Clock.h \
  /usr/include/c++/15/atomic /usr/include/c++/15/bits/atomic_base.h \
  /usr/include/c++/15/bits/atomic_lockfree_defines.h \
  /usr/include/c++/15/bits/atomic_wait.h /usr/include/c++/15/climits \
@@ -251,8 +251,8 @@ CMakeFiles/quantfusion.dir/main.cpp.o: \
  /usr/include/c++/15/algorithm /usr/include/c++/15/bits/ranges_algo.h \
  /usr/include/c++/15/pstl/glue_algorithm_defs.h \
  /usr/include/c++/15/pstl/execution_defs.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/data/DataManager.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/data/../core/ThreadPool.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/data/DataManager.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/data/../core/ThreadPool.h \
  /usr/include/c++/15/thread /usr/include/c++/15/stop_token \
  /usr/include/c++/15/bits/std_thread.h /usr/include/c++/15/semaphore \
  /usr/include/c++/15/bits/semaphore_base.h \
@@ -314,36 +314,36 @@ CMakeFiles/quantfusion.dir/main.cpp.o: \
  /usr/include/c++/15/bits/random.tcc /usr/include/c++/15/numeric \
  /usr/include/c++/15/bits/stl_numeric.h \
  /usr/include/c++/15/pstl/glue_numeric_defs.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/data/DataPipeline.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/Backtester.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/../events/EventBus.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/data/DataPipeline.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/Backtester.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/../events/EventBus.h \
  /usr/include/c++/15/typeindex /usr/include/c++/15/any \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/MarketSimulator.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/../execution/SlippageEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/MarketSimulator.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/../execution/SlippageEngine.h \
  /usr/include/c++/15/map /usr/include/c++/15/bits/stl_tree.h \
  /usr/include/c++/15/bits/stl_map.h \
  /usr/include/c++/15/bits/stl_multimap.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/../portfolio/Portfolio.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/../risk/RiskEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/../analytics/Analytics.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/../portfolio/Portfolio.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/../risk/RiskEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/../analytics/Analytics.h \
  /usr/include/c++/15/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /usr/include/c++/15/iostream \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/ExampleStrategies.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/RegimeDetection.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/PortfolioStrategy.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/simulation/../portfolio/PortfolioConstruction.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/factors/AlphaEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/analytics/BenchmarkComparison.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/optimizer/Optimizer.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/microstructure/Microstructure.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/execution/OrderBook.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/regimes/RegimeEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/alpha_factory/AlphaFactory.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/validation/WalkForwardValidator.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/validation/RobustnessEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/ranking/StrategyRanker.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/ranking/StrategyRegistry.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/storage/StorageEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/ExampleStrategies.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/RegimeDetection.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/PortfolioStrategy.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/simulation/../portfolio/PortfolioConstruction.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/factors/AlphaEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/analytics/BenchmarkComparison.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/optimizer/Optimizer.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/microstructure/Microstructure.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/execution/OrderBook.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/regimes/RegimeEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/alpha_factory/AlphaFactory.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/validation/WalkForwardValidator.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/validation/RobustnessEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/ranking/StrategyRanker.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/ranking/StrategyRegistry.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/storage/StorageEngine.h \
  /usr/include/sqlite3.h

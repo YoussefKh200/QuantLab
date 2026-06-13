@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/CMakeLists.txt"
+  "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/CMakeLists.txt"
   "CMakeFiles/4.2.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.3/CMakeSystem.cmake"
   "/usr/lib/cmake/pybind11/FindPythonLibsNew.cmake"

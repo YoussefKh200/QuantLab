@@ -73,10 +73,12 @@ public:
         double old_qty  = pos.quantity;
         double new_qty  = old_qty + signed_qty;
         double realized = 0.0;
+        double close_qty = 0.0;
+        double entry_cost_for_record = pos.avg_cost; // capture before any reset below
 
         // Compute realized P&L on close/reduce
         if (std::abs(old_qty) > 1e-9 && old_qty * signed_qty < 0) {
-            double close_qty = std::min(std::abs(old_qty), std::abs(signed_qty));
+            close_qty = std::min(std::abs(old_qty), std::abs(signed_qty));
             realized = close_qty * (fill.price - pos.avg_cost)
                      * (old_qty > 0 ? 1.0 : -1.0);
         }
@@ -85,14 +87,14 @@ public:
         if (std::abs(new_qty) > 1e-9) {
             if ((old_qty >= 0 && signed_qty > 0) ||
                 (old_qty <= 0 && signed_qty < 0)) {
-                // Adding to position
+                // Adding to position (same direction)
                 pos.avg_cost = (pos.avg_cost * std::abs(old_qty)
                               + fill.price   * std::abs(signed_qty))
                              / std::abs(new_qty);
-            } else if (std::abs(new_qty) < std::abs(old_qty)) {
-                // Partial close: cost basis stays
+            } else if (old_qty * new_qty > 0) {
+                // Partial close, same sign retained: cost basis stays
             } else {
-                // Flip: reset basis to new fill
+                // Flip (sign changed) or fresh open from flat: reset basis
                 pos.avg_cost = fill.price;
             }
         } else {
@@ -115,8 +117,8 @@ public:
             tr.instrument = fill.instrument;
             tr.strategy_id= fill.strategy_id;
             tr.side       = fill.side;
-            tr.qty        = std::abs(realized / std::max(std::abs(fill.price - pos.avg_cost), 1e-9));
-            tr.entry_price= pos.avg_cost;
+            tr.qty        = close_qty;
+            tr.entry_price= entry_cost_for_record;
             tr.exit_price = fill.price;
             tr.entry_ts   = pos.ts_opened;
             tr.exit_ts    = fill.ts;

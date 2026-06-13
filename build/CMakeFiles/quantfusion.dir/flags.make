@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DQL_USE_SQLITE
 
-CXX_INCLUDES = -I/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion
+CXX_INCLUDES = -I/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion
 
 CXX_FLAGS = -O3 -DNDEBUG -std=c++20 -O3 -march=native -Wall -Wextra -Wpedantic -Wno-unused-parameter -ffast-math -funroll-loops -DNDEBUG
 

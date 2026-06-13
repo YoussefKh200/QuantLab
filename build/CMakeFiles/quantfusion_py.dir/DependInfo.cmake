@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/PyBridge.cpp" "CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o" "gcc" "CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o.d"
+  "/mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/PyBridge.cpp" "CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o" "gcc" "CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o.d"
   "" "quantfusion_py.cpython-314-x86_64-linux-gnu.so" "gcc" "CMakeFiles/quantfusion_py.dir/link.d"
   )
 

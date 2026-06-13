@@ -1,5 +1,5 @@
 CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/PyBridge.cpp \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/PyBridge.cpp \
  /usr/include/stdc-predef.h /usr/include/pybind11/pybind11.h \
  /usr/include/pybind11/detail/class.h /usr/include/pybind11/attr.h \
  /usr/include/pybind11/detail/common.h \
@@ -444,7 +444,7 @@ CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: \
  /usr/include/c++/15/bits/monostate.h /usr/include/pybind11/numpy.h \
  /usr/include/pybind11/complex.h /usr/include/c++/15/complex \
  /usr/include/pybind11/functional.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../core/Types.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../core/Types.h \
  /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono_io.h \
  /usr/include/c++/15/iomanip /usr/include/c++/15/locale \
  /usr/include/c++/15/bits/locale_facets_nonio.h \
@@ -457,10 +457,10 @@ CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: \
  /usr/include/c++/15/charconv /usr/include/c++/15/bits/formatfwd.h \
  /usr/include/c++/15/bits/unicode.h \
  /usr/include/c++/15/bits/unicode-data.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../core/SymbolRegistry.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../core/Clock.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../data/DataManager.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../data/../core/ThreadPool.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../core/SymbolRegistry.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../core/Clock.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../data/DataManager.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../data/../core/ThreadPool.h \
  /usr/include/c++/15/future /usr/include/c++/15/condition_variable \
  /usr/include/c++/15/bits/atomic_futex.h /usr/include/c++/15/queue \
  /usr/include/c++/15/bits/stl_queue.h /usr/include/c++/15/latch \
@@ -480,23 +480,23 @@ CMakeFiles/quantfusion_py.dir/src/python_bridge/PyBridge.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/mm_malloc.h \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/mwaitintrin.h \
  /usr/include/c++/15/bits/random.tcc \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/Backtester.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/../events/EventBus.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/Backtester.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/../events/EventBus.h \
  /usr/include/c++/15/any \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/MarketSimulator.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/../execution/SlippageEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/../portfolio/Portfolio.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/../risk/RiskEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/../analytics/Analytics.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/MarketSimulator.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/../execution/SlippageEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/../portfolio/Portfolio.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/../risk/RiskEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/../analytics/Analytics.h \
  /usr/include/c++/15/iostream \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/ExampleStrategies.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/RegimeDetection.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/PortfolioStrategy.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../simulation/../portfolio/PortfolioConstruction.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../factors/AlphaEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../alpha_factory/AlphaFactory.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../validation/WalkForwardValidator.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../validation/../optimizer/Optimizer.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../ranking/StrategyRanker.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../ranking/../validation/RobustnessEngine.h \
- /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.1/quantfusion/src/python_bridge/../ranking/../regimes/RegimeEngine.h
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/ExampleStrategies.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/RegimeDetection.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/PortfolioStrategy.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../simulation/../portfolio/PortfolioConstruction.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../factors/AlphaEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../alpha_factory/AlphaFactory.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../validation/WalkForwardValidator.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../validation/../optimizer/Optimizer.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../ranking/StrategyRanker.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../ranking/../validation/RobustnessEngine.h \
+ /mnt/c/Users/youss/OneDrive/Documents/quantfusion_v1.2/quantfusion/src/python_bridge/../ranking/../regimes/RegimeEngine.h

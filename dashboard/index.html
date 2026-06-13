@@ -1,0 +1,273 @@
+<!--
+============================================================================
+ QuantFusion Research Dashboard — Standalone Client-Side Viewer
+============================================================================
+ USAGE
+ -----
+ 1. Open this file directly in a browser (double-click index.html), OR
+    serve it locally if your browser blocks local file access for CSV
+    drag/drop (rare): `python -m http.server 8000` then visit
+    http://localhost:8000
+
+ 2. Load data:
+      - Drag & drop one or more "nav.csv" files onto the NAV drop zone,
+        or click it to open a file picker (multiple files = overlay
+        multiple equity curves).
+      - Drag & drop a "trades.csv" file onto the Trades drop zone.
+      - If you load nothing, the dashboard runs in DEMO MODE with a
+        small embedded sample dataset so you can see it working.
+
+ INTEGRATION WITH QUANTFUSION
+ -----------------------------
+ The C++ Backtester writes CSVs in exactly the schema this dashboard
+ expects:
+
+     ql::Backtester bt(cfg);
+     ... add feeds + strategy + bt.run() ...
+     bt.export_nav_csv("dashboard/data/nav.csv");
+     bt.export_trades_csv("dashboard/data/trades.csv");
+
+ Or via the StorageEngine (per-strategy files, also lifecycle/alpha
+ data):
+
+     ql::storage::FlatFileStorage storage("dashboard/data");
+     storage.persist_nav_curve(bt.portfolio().nav_curve(), "my_strategy");
+     storage.persist_trades(bt.portfolio().trades(), "my_strategy");
+
+ Then open dashboard/index.html and drop the generated CSV(s) onto the
+ NAV / Trades drop zones (or load them via the file pickers).
+
+ EXPECTED CSV COLUMNS
+ ---------------------
+ nav.csv (one row per bar/snapshot):
+     timestamp   - UNIX milliseconds OR ISO-8601 string (e.g. 2024-01-02)
+     nav         - portfolio net asset value (number)
+     cash        - cash balance (optional)
+     drawdown    - drawdown as a fraction, e.g. 0.05 = 5% (optional;
+                   computed automatically from `nav` if missing)
+
+ trades.csv (one row per closed trade):
+     instrument   - ticker / symbol (string)
+     strategy_id  - strategy identifier (string or number)
+     side         - "LONG"/"SHORT" or "BUY"/"SELL" (case-insensitive)
+     qty          - quantity (number)
+     entry_price  - entry fill price (number)
+     exit_price   - exit fill price (number)
+     entry_ts     - entry timestamp, UNIX ms or ISO-8601
+     exit_ts      - exit timestamp, UNIX ms or ISO-8601
+     pnl          - realised P&L for the trade (number)
+     commission   - commission paid (optional)
+     slippage     - slippage cost (optional)
+
+ ASSUMPTIONS
+ -----------
+ - Timestamps: the parser accepts either a numeric UNIX-millisecond
+   value or any string parseable by `new Date(...)` (ISO-8601 etc).
+   If your timestamps are UNIX *seconds* or *nanoseconds*, multiply/
+   divide before export, or the chart x-axis will be off — the parser
+   auto-detects seconds vs ms vs ns by magnitude as a best effort.
+ - "Buy" markers = trade entry, "Sell" markers = trade exit, coloured
+   green/red respectively, placed on the NAV curve at the NAV value
+   nearest that trade's entry/exit timestamp.
+ - Annualisation assumes daily bars (252 trading days/year) for
+   Sharpe / annualised vol / CAGR. If your NAV series has a different
+   bar frequency the dashboard infers an approximate bars-per-year
+   from the median timestamp delta.
+ - Risk-free rate is assumed 0% for the Sharpe calculation (can be
+   changed in app.js: RISK_FREE_RATE constant).
+
+ LIBRARIES (via CDN — internet connection required on first load)
+ -----------------------------------------------------------------
+ - Plotly.js   (interactive charts, zoom/pan, PNG export)
+ - PapaParse   (robust CSV parsing)
+ No build step. No server required for normal use.
+============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QuantFusion Research Dashboard</title>
+
+<!-- Plotly for interactive charting -->
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<!-- PapaParse for CSV parsing -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-title">
+    <span class="logo-mark">QF</span>
+    <div>
+      <h1>QuantFusion Research Dashboard</h1>
+      <p class="subtitle">Standalone NAV / Trade Analytics &mdash; client-side, no server</p>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <span id="modeIndicator" class="mode-badge mode-demo">DEMO MODE</span>
+  </div>
+</header>
+
+<main class="layout">
+
+  <!-- ============================== LEFT: DATA INPUT + SUMMARY ============================== -->
+  <aside class="sidebar">
+
+    <section class="panel">
+      <h2>Data Input</h2>
+
+      <label class="dropzone" id="navDropzone" tabindex="0">
+        <input type="file" id="navFileInput" accept=".csv" multiple hidden />
+        <div class="dz-icon">&#128202;</div>
+        <div class="dz-text">
+          <strong>NAV CSV(s)</strong>
+          <span>Drop file(s) or click to browse</span>
+          <span class="dz-hint">timestamp, nav, cash, drawdown</span>
+        </div>
+      </label>
+      <ul id="navFileList" class="file-list"></ul>
+
+      <label class="dropzone" id="tradesDropzone" tabindex="0">
+        <input type="file" id="tradesFileInput" accept=".csv" hidden />
+        <div class="dz-icon">&#128203;</div>
+        <div class="dz-text">
+          <strong>Trades CSV</strong>
+          <span>Drop file or click to browse</span>
+          <span class="dz-hint">instrument, side, entry/exit price &amp; ts, pnl ...</span>
+        </div>
+      </label>
+      <ul id="tradesFileList" class="file-list"></ul>
+
+      <button id="resetBtn" class="btn btn-secondary full-width">Reset to Demo Data</button>
+    </section>
+
+    <section class="panel">
+      <h2>Performance Summary</h2>
+      <div id="summaryGrid" class="summary-grid">
+        <!-- populated by app.js -->
+      </div>
+    </section>
+
+  </aside>
+
+  <!-- ============================== RIGHT: CHARTS + TABLE ============================== -->
+  <div class="content">
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Equity Curve &amp; Drawdown</h2>
+        <div class="panel-controls">
+          <label class="inline-control">
+            <input type="checkbox" id="toggleDrawdown" checked />
+            Show drawdown
+          </label>
+          <label class="inline-control">
+            <input type="checkbox" id="toggleTrades" checked />
+            Show trade markers
+          </label>
+          <button id="exportNavPng" class="btn btn-small">Export PNG</button>
+        </div>
+      </div>
+      <div id="navChart" class="chart chart-tall"></div>
+    </section>
+
+    <section class="panel-row">
+      <section class="panel panel-half">
+        <div class="panel-header">
+          <h2>Returns Distribution</h2>
+          <div class="panel-controls">
+            <select id="returnsMode" class="select-small">
+              <option value="hist">PnL Histogram</option>
+              <option value="returns">Daily Returns Histogram</option>
+            </select>
+            <button id="exportRetPng" class="btn btn-small">Export PNG</button>
+          </div>
+        </div>
+        <div id="returnsChart" class="chart chart-medium"></div>
+      </section>
+
+      <section class="panel panel-half">
+        <div class="panel-header">
+          <h2>Cumulative Returns</h2>
+          <div class="panel-controls">
+            <select id="cumMode" class="select-small">
+              <option value="linear">Linear Cumulative</option>
+              <option value="log">Log Cumulative</option>
+            </select>
+            <button id="exportCumPng" class="btn btn-small">Export PNG</button>
+          </div>
+        </div>
+        <div id="cumChart" class="chart chart-medium"></div>
+      </section>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Trades</h2>
+        <div class="panel-controls trade-filters">
+          <input type="text" id="searchInput" class="text-input" placeholder="Search all columns..." />
+          <select id="filterInstrument" class="select-small"><option value="">All instruments</option></select>
+          <select id="filterStrategy" class="select-small"><option value="">All strategies</option></select>
+          <select id="filterSide" class="select-small">
+            <option value="">All sides</option>
+            <option value="LONG">Long</option>
+            <option value="SHORT">Short</option>
+          </select>
+          <input type="date" id="filterDateFrom" class="text-input" title="From date" />
+          <input type="date" id="filterDateTo" class="text-input" title="To date" />
+          <button id="clearFilters" class="btn btn-small btn-secondary">Clear</button>
+          <button id="exportCsv" class="btn btn-small">Export CSV</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="tradesTable" class="data-table">
+          <thead>
+            <tr>
+              <th data-key="instrument">Instrument</th>
+              <th data-key="strategy_id">Strategy</th>
+              <th data-key="side">Side</th>
+              <th data-key="qty">Qty</th>
+              <th data-key="entry_price">Entry Px</th>
+              <th data-key="exit_price">Exit Px</th>
+              <th data-key="entry_ts">Entry Time</th>
+              <th data-key="exit_ts">Exit Time</th>
+              <th data-key="pnl">PnL</th>
+              <th data-key="commission">Comm.</th>
+              <th data-key="slippage">Slippage</th>
+            </tr>
+          </thead>
+          <tbody id="tradesTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <div id="tableInfo" class="table-info"></div>
+        <div class="pagination">
+          <button id="prevPage" class="btn btn-small btn-secondary">&laquo; Prev</button>
+          <span id="pageIndicator" class="page-indicator"></span>
+          <button id="nextPage" class="btn btn-small btn-secondary">Next &raquo;</button>
+          <select id="pageSize" class="select-small">
+            <option value="10">10 / page</option>
+            <option value="25" selected>25 / page</option>
+            <option value="50">50 / page</option>
+            <option value="100">100 / page</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  QuantFusion Dashboard &mdash; all processing happens locally in your browser. No data leaves your machine.
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -273,16 +273,16 @@ public:
     // ── CSV export ─────────────────────────────────────────────────────────
     void export_nav_csv(const std::string& path) const {
         std::ofstream f(path);
-        f << "timestamp,nav,cash,gross_exposure,net_exposure,leverage,daily_pnl\n";
+        f << "timestamp,nav,cash,gross_exposure,net_exposure,leverage,daily_pnl,drawdown\n";
         for (auto& p : portfolio_.nav_curve())
             f << p.ts << "," << p.nav << "," << p.cash << ","
               << p.gross_exposure << "," << p.net_exposure << ","
-              << p.leverage << "," << p.daily_pnl << "\n";
+              << p.leverage << "," << p.daily_pnl << "," << p.drawdown << "\n";
     }
 
     void export_trades_csv(const std::string& path) const {
         std::ofstream f(path);
-        f << "instrument,strategy,side,qty,entry,exit,entry_ts,exit_ts,"
+        f << "instrument,strategy_id,side,qty,entry_price,exit_price,entry_ts,exit_ts,"
              "pnl,commission,slippage\n";
         for (auto& t : portfolio_.trades()) {
             f << ql::ticker(t.instrument) << ","
